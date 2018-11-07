@@ -1,12 +1,15 @@
+*{
+    margin: 0;
+}
+
 html,
-body,
-.Site {
-    min-height: 100vh;
+body {
+    height: 75vh;
 }
 
 body {
-    margin: 0;
-    background-color: #333;
+    /* margin-top: 5em; */
+    background-color: black;
     background-image: url(https://www.mountainphotography.com/images/xl/20120824-Dark-Sunrise-in-the-Needles.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -17,15 +20,6 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 300;
     color: whitesmoke;
-}
-
-/* Sticky Footer Solution --> https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
-
-.Site {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
 }
 
 h1 {
@@ -71,20 +65,9 @@ p {
     height: auto;
 }
 
-
-
-/* header::after {
-    content: " ";
-    display: table;
-    clear: both;
-} */
-
 .navBar {
-    /* max-width: 50%;
-    max-height: 50%; */
     width: 55%;
     margin-top: 10px;
-    /* border: 2px solid green; */
 }
 
 .logo {
@@ -149,31 +132,27 @@ nav a.active {
 }
 
 /* ----------------Body CSS-------------- */
-.Site-content {
-    flex: 1 1 auto;
-    position: relative;
-    overflow-y: auto;
-}
+/* Sticky Footer Solution --> https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+/* Recommended by DU Bootcamp https://css-tricks.com/snippets/css/sticky-footer/ */
 
-.container {
+.page-wrap {
     display: flex;
-    /* flex: 1 1 auto; */
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow-y: auto;
-    position: relative;
-    /* top: 15%; */
-    
-    /* min-height: 80vmin; */
+    /* justify-content: center; */
+    /* overflow-y: auto; */
+    /* position: relative; */
+    height: auto !important;
+    /* height: 100%; */
+    min-height: 100%;
     width: 100%;
-    /* border: 3px solid red; */
-    margin: 125px 0 50px 0;     
+    margin: 10em 0 -50px 0;     
   }
 
-.container::after {
-    content: " ";
-    clear: both;
-    display: table;
+.page-wrap:after {
+    content:"";
+    display: block;
+    height: 50px;
 }
 .box {
     background-color: rgba(44, 43, 43, 0.651);
@@ -182,8 +161,13 @@ nav a.active {
     backdrop-filter: blur(25px);   
     -webkit-backdrop-filter: blur(25px);  
     border-radius: 5px;
-    text-align: left;
+    
+    /* display: flex;
+    flex-direction: column; */
+    /* text-align: left; */
     width: 55%;
+    height: 100%;
+    /* border: 2px solid orange; */
   }
 
 #profilePic {
@@ -197,17 +181,21 @@ nav a.active {
 /* --------------Portfolio-------------- */
 /* Need to FlexBox This! */
 .thumbContainer {
-    margin-left: 55px;
-    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    /* align-content: space-evenly; */
+    
 }
 .thumbnail {
     width: 200px;
     height: 200px;
+    margin: 1em;
     /* position: relative; */
-    margin-top: 20px;
-    float: left;
-    margin-right: 30px;
-    margin-bottom: 10px;
+    /* margin-top: 20px; */
+    /* float: left; */
+    /* margin-right: 30px; */
+    /* margin-bottom: 10px; */
 }
 
 .thumbnail a {
@@ -219,7 +207,7 @@ nav a.active {
 }
 .text-block {
     position: relative;
-    bottom: 1.5em;
+    bottom: 4em;
     background-color: #b40000;
     color: #f2f2f2;
     text-align: center;
@@ -389,11 +377,11 @@ footer {
     justify-content: center;
     
     width: 100%;
-    height: auto;
+    height: 50px;
     /* Sticky Footer part 2 https://appendto.com/2016/09/css-simple-sticky-footer/ */
-    /* position: relative;
+    position: relative;
     bottom: -20%;
-    left: 0%; */
+    left: 0%;
 }
 
 footer::after {

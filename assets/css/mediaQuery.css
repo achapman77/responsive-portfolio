@@ -1,3 +1,17 @@
+@media all {
+    #profilePic {
+        border: 1px solid blue;
+        /* display: flex;
+        align-self: center; */
+        border-radius: 5px;
+        /* width: 100%; */
+        margin: 0.5em;
+        /* width: 12em; */
+        width: 12em;
+        max-height: auto;
+    }  
+}
+
 /* Large  Screens 980 px */
 @media all and  (max-width: 980px) {
     /* Nav Bar----------------- */
@@ -70,11 +84,15 @@
     /* Portfolio------------------- */
 
     .thumbContainer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
         /* display: flex;
         flex-direction: column;
         align-items: center;
         align-content: space-between; */
-        margin: 1em;
+        /* padding-bottom: -3em;
+        margin: 0 3em -3em 3em; */
         /* border: 2px solid orange; */
         
     }
@@ -82,8 +100,8 @@
     .thumbnail {
         /* border: 2px solid orange; */
         margin: 1em;
-        width: 25%;
-        height: 100%;
+        width: 35%;
+        height: auto;
         /* float: none; */
     }
 
@@ -338,6 +356,7 @@
         border-radius: 5px;
         /* width: 100%; */
         margin: 0.5em;
+        width: 400px;
         max-width: 100%;
         max-height: auto;
     }
